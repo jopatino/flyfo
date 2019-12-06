@@ -28,6 +28,7 @@ public class ProfileActivity extends AppCompatActivity {
     private TextView profileName, profileEmail;
     private ImageView profileImage;
     private Button signOut;
+    private Button btnnext;
 
 
 
@@ -45,6 +46,8 @@ public class ProfileActivity extends AppCompatActivity {
         profileImage = findViewById(R.id.profile_image);
         signOut = findViewById(R.id.sign_out);
 
+        btnnext = findViewById(R.id.btnNext);
+
         //Mostrar datos de cuenta de google
         setDataOnView();
 
@@ -54,6 +57,15 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 signOut();
+            }
+        });
+
+        btnnext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentNext = new Intent(ProfileActivity.this, ShoppingCarActivity.class);
+                startActivity(intentNext);
+
             }
         });
     }
